@@ -12,10 +12,7 @@ public class HealthSystem : MonoBehaviour
     {
         health = 100f;
         shield = 50f;
-        if (canRegen)
-        {
-            StartCoroutine(RegenCouroutine());
-        }
+       
     }
     private void Update()
     {
@@ -25,6 +22,7 @@ public class HealthSystem : MonoBehaviour
             regenTimer = 0;
         }
         RegenShield();
+       
     }
 
     public void TakeDamage(float dmg)
@@ -55,6 +53,11 @@ public class HealthSystem : MonoBehaviour
                 canRegen = true;
                 regenTimer = 0;
             }
+            if (canRegen)
+            {
+                StartCoroutine(RegenCouroutine());
+                
+            }
         }
         
     }
@@ -71,4 +74,5 @@ public class HealthSystem : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
+
 }
