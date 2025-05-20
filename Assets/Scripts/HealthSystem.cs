@@ -10,7 +10,7 @@ public class HealthSystem : MonoBehaviour
     public float regenTimer=0;
     void Start()
     {
-        StartCoroutine(RegenCouroutine());
+        
         health = 100f;
         shield = 50f;
     }
@@ -53,6 +53,10 @@ public class HealthSystem : MonoBehaviour
                 regenTimer = 0;
             }
         }
+        if(canRegen)
+        {
+            StartCoroutine(RegenCouroutine());
+        }
     }
     IEnumerator RegenCouroutine()
     {
@@ -62,6 +66,7 @@ public class HealthSystem : MonoBehaviour
             if (shield > 50)
             {
                 shield = 50;
+                canRegen=false;
             }
             yield return new WaitForSeconds(1f);
         }
