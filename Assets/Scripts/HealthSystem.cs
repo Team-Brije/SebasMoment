@@ -10,16 +10,19 @@ public class HealthSystem : MonoBehaviour
     public float regenTimer=0;
     void Start()
     {
-        
         health = 100f;
         shield = 50f;
+        if (canRegen)
+        {
+            StartCoroutine(RegenCouroutine());
+        }
     }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             TakeDamage(25);
-
+            regenTimer = 0;
         }
         RegenShield();
     }
@@ -53,10 +56,7 @@ public class HealthSystem : MonoBehaviour
                 regenTimer = 0;
             }
         }
-        if(canRegen)
-        {
-            StartCoroutine(RegenCouroutine());
-        }
+        
     }
     IEnumerator RegenCouroutine()
     {
