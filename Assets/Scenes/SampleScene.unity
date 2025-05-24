@@ -472,6 +472,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Amporbus
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b73839f55a3a57b4888227251db6d464, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -678,6 +682,49 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1794664147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794664145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: fd1ed4ce59c39e34bbf4cd5440e79bb0, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Movement
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &1794664148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1794664145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 164c0c7adb31a39499b32edb26a26927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 40
 --- !u!1001 &2049272527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1245,6 +1292,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fdeea73f481710e47aa84f42b5c8d6c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1794664146}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fdeea73f481710e47aa84f42b5c8d6c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1794664148}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fdeea73f481710e47aa84f42b5c8d6c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1794664147}
   m_SourcePrefab: {fileID: 100100000, guid: fdeea73f481710e47aa84f42b5c8d6c7, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
