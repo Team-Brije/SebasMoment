@@ -4,14 +4,19 @@ using System.Collections;
 public class HealthSystem : MonoBehaviour
 {
     public float health;
+    public float maxHealth = 100f;
+    public float maxShield = 50f;
     public float shield;
+    public float regenTimer = 0;
+
     public bool isTakingDmg;
     public bool canRegen;
-    public float regenTimer=0;
+    public bool isDead;
+
     void Start()
     {
-        health = 100f;
-        shield = 50f;
+        health = maxHealth;
+        shield = maxShield;
        
     }
     private void Update()
@@ -19,10 +24,10 @@ public class HealthSystem : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             TakeDamage(25);
-            regenTimer = 0;
+            
         }
         RegenShield();
-       
+        death();     
     }
 
     public void TakeDamage(float dmg)
@@ -30,6 +35,7 @@ public class HealthSystem : MonoBehaviour
         shield -= dmg;
         isTakingDmg = true;
         canRegen = false;
+        regenTimer = 0;
 
         if (shield < 0)
         {
@@ -74,5 +80,8 @@ public class HealthSystem : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
     }
+    public virtual void death()
+    {
 
+    }
 }

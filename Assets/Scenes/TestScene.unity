@@ -341,7 +341,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 966590257}
-  - component: {fileID: 966590256}
+  - component: {fileID: 966590258}
   m_Layer: 0
   m_Name: HealthManager
   m_TagString: Untagged
@@ -349,23 +349,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &966590256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 966590255}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9825f8e18a514c84f9209b99f3c2cb33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  shield: 0
-  isTakingDmg: 0
-  canRegen: 0
-  regenTimer: 0
 --- !u!4 &966590257
 Transform:
   m_ObjectHideFlags: 0
@@ -381,6 +364,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &966590258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966590255}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 587c93f124f04ac49a7740c97f93aa96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  maxShield: 50
+  shield: 0
+  regenTimer: 0
+  isTakingDmg: 0
+  canRegen: 0
+  isDead: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
