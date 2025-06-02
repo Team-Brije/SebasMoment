@@ -5769,9 +5769,17 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: shootPoint
+      value: 
+      objectReference: {fileID: 1222507895}
+    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: SprintSpeed
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1141587711}
     - target: {fileID: 4416926081852918490, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
       propertyPath: LockCameraPosition
       value: 0
@@ -5967,7 +5975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -111, y: 0}
+  m_AnchoredPosition: {x: 2.2, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038305321
@@ -6336,7 +6344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 4243954202036760098, guid: 45ce03631421b284cb98b2fa756721a8, type: 3}
   shootPoint: {fileID: 1222507895}
-  bulletSpeed: 200
+  bulletSpeed: 500
 --- !u!1 &1142124407 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3358908127710818039, guid: b73839f55a3a57b4888227251db6d464, type: 3}
