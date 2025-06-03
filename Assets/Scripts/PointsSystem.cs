@@ -10,16 +10,12 @@ public class PointsSystem : MonoBehaviour
         score = 0;
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        
+    {     
         if (Input.GetKeyDown(KeyCode.E))
         {
             score++;
             Debug.Log(score);
-            
-            
         }
     }
 }

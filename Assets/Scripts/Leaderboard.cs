@@ -1,10 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
-
+using TMPro;
 public class Leaderboard : MonoBehaviour
 {
+    public List<GameObject> playersList = new List<GameObject>();
     public List<PointsSystem> leaderList = new List<PointsSystem>();
+    public List<TextMeshProUGUI> pointsText;
+    public List<TextMeshProUGUI> NameText;
+
     public List<float> points;
+    
+    public GameObject players;
 
     public float playerStats;
     void Start()
@@ -12,10 +18,15 @@ public class Leaderboard : MonoBehaviour
         List<float> points = new List<float>();
     }
 
-    
     void Update()
     {
-       
+        ///aqui cambiar el input por lo que quieren que sea la condicional de instancear
+        if (Input.GetKeyDown(KeyCode.E))
+        {  
+            leaderList.Add(Instantiate(players.GetComponent<PointsSystem>()));
+        }
+        /////
+
         foreach (PointsSystem player in leaderList)
         {
             if (player != null)
@@ -53,5 +64,12 @@ public class Leaderboard : MonoBehaviour
             }
         }
         
+    }
+    public void TextChange()
+    {
+        foreach(TextMeshProUGUI text in pointsText)
+        {
+          
+        }
     }
 }
