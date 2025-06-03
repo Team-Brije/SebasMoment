@@ -244,6 +244,9 @@ MonoBehaviour:
   - {fileID: 1172464690}
   - {fileID: 1002080354}
   - {fileID: 1640347003}
+  - {fileID: 1640347003}
+  - {fileID: 1640347003}
+  - {fileID: 1640347003}
   points: []
   playerStats: 0
 --- !u!4 &567229124
@@ -431,8 +434,6 @@ MonoBehaviour:
   maxShield: 50
   shield: 0
   regenTimer: 0
-  playerstats: {fileID: 0}
-  score: 0
   isTakingDmg: 0
   canRegen: 0
   isDead: 0
@@ -449,6 +450,7 @@ GameObject:
   - component: {fileID: 1002080357}
   - component: {fileID: 1002080356}
   - component: {fileID: 1002080355}
+  - component: {fileID: 1002080360}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -473,8 +475,6 @@ MonoBehaviour:
   maxShield: 50
   shield: 0
   regenTimer: 0
-  playerstats: {fileID: 11400000, guid: 505a212c19d81a1418b7af85e09cb5d7, type: 2}
-  score: 0
   isTakingDmg: 0
   canRegen: 0
   isDead: 0
@@ -567,6 +567,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002080360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002080354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c547cca8507c6c54a91aa3b828209f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboard: {fileID: 567229123}
+  score: 0
+  ID: 0
 --- !u!1 &1172464690
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,6 +595,7 @@ GameObject:
   - component: {fileID: 1172464693}
   - component: {fileID: 1172464692}
   - component: {fileID: 1172464691}
+  - component: {fileID: 1172464696}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -604,8 +620,6 @@ MonoBehaviour:
   maxShield: 50
   shield: 0
   regenTimer: 0
-  playerstats: {fileID: 11400000, guid: 6d06193ef96d55d4d83281eb65b1d638, type: 2}
-  score: 0
   isTakingDmg: 0
   canRegen: 0
   isDead: 0
@@ -698,6 +712,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1172464696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172464690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c547cca8507c6c54a91aa3b828209f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboard: {fileID: 567229123}
+  score: 0
+  ID: 0
 --- !u!1 &1640347003
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +740,7 @@ GameObject:
   - component: {fileID: 1640347006}
   - component: {fileID: 1640347005}
   - component: {fileID: 1640347004}
+  - component: {fileID: 1640347009}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -735,8 +765,6 @@ MonoBehaviour:
   maxShield: 50
   shield: 0
   regenTimer: 0
-  playerstats: {fileID: 11400000, guid: 7078305ab355bce4f84dfa0dcbe3b773, type: 2}
-  score: 0
   isTakingDmg: 0
   canRegen: 0
   isDead: 0
@@ -829,6 +857,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1640347009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640347003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c547cca8507c6c54a91aa3b828209f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leaderboard: {fileID: 567229123}
+  score: 0
+  ID: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

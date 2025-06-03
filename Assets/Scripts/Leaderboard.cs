@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class Leaderboard : MonoBehaviour
 {
-    public List<GameObject> leaderList = new List<GameObject>();
+    public List<PointsSystem> leaderList = new List<PointsSystem>();
     public List<float> points;
 
     public float playerStats;
@@ -16,14 +16,14 @@ public class Leaderboard : MonoBehaviour
     void Update()
     {
        
-        foreach (GameObject player in leaderList)
+        foreach (PointsSystem player in leaderList)
         {
             if (player != null)
             {
                 if(points.Count<leaderList.Count)
                 {
-                    playerStats = player.GetComponent<DeathSystem>().score;
-                    SortLowestToHighestPlayers();     
+                    playerStats = player.score;
+                    SortLowestToHighestPlayers();                       
                 }
             }
             else
@@ -31,7 +31,10 @@ public class Leaderboard : MonoBehaviour
                 return;
             }
         }
-        points.Sort();
+        for (int i = 0; i < leaderList.Count; i++)
+        {
+            points[i] = leaderList[i].score; 
+        }
     }
     public void SortLowestToHighestPlayers()
     {
@@ -39,5 +42,16 @@ public class Leaderboard : MonoBehaviour
         points.Sort();
         
     }
+    public void Updatelist(int ID)
+    {
+        foreach (PointsSystem Psystem in leaderList)
+        {
+            if(Psystem.ID == ID)
+            {
 
+                break;
+            }
+        }
+        
+    }
 }

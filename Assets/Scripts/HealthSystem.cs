@@ -8,8 +8,7 @@ public class HealthSystem : MonoBehaviour
     public float maxShield = 50f;
     public float shield;
     public float regenTimer = 0;
-    public PlayerStats playerstats;
-    public float score;
+  
 
     public bool isTakingDmg;
     public bool canRegen;
@@ -19,7 +18,7 @@ public class HealthSystem : MonoBehaviour
     {
         health = maxHealth;
         shield = maxShield;
-        score = playerstats.Score;
+        
     }
     private void Update()
     {
