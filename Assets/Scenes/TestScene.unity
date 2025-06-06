@@ -240,11 +240,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2de3d8d7f55a2b4b96a0f601248e468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PointsSystem: {fileID: 0}
   leaderList: []
+  idList: 
   pointsText:
   - {fileID: 703112506}
   - {fileID: 1376562351}
   - {fileID: 1176365118}
+  nameText: []
   points: []
   players: {fileID: 1640347003}
   playerStats: 0

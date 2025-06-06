@@ -5,7 +5,11 @@ public class Leaderboard : MonoBehaviour
 {
     //public List<GameObject> playersList = new List<GameObject>();
 
+    public PointsSystem PointsSystem;
     public List<PointsSystem> leaderList = new List<PointsSystem>();
+    public List<int> idList = new List<int>();
+    public int idCounter=0;
+
     public List<TextMeshProUGUI> pointsText;
     public List<TextMeshProUGUI> nameText;
 
@@ -24,7 +28,10 @@ public class Leaderboard : MonoBehaviour
         ///aqui cambiar el input por lo que quieren que sea la condicional de instancear
         if (Input.GetKeyDown(KeyCode.E))
         {  
+            idList.Add(players.GetComponent<PointsSystem>().ID=idCounter);
             leaderList.Add(Instantiate(players.GetComponent<PointsSystem>()));
+            idCounter++;
+        
         }
         /////
 
@@ -47,6 +54,7 @@ public class Leaderboard : MonoBehaviour
         {
             points[i] = leaderList[i].score; 
         }
+       
         TextChange();
     }
     public void SortLowestToHighestPlayers()
