@@ -8,7 +8,6 @@ public class Leaderboard : MonoBehaviour
     public PointsSystem PointsSystem;
     public List<PointsSystem> leaderList = new List<PointsSystem>();
     public List<int> idList = new List<int>();
-    public int idCounter=0;
 
     public List<TextMeshProUGUI> pointsText;
     public List<TextMeshProUGUI> nameText;
@@ -18,6 +17,7 @@ public class Leaderboard : MonoBehaviour
     public GameObject players;
 
     public float playerStats;
+    public int idCounter = 0;
     void Start()
     {
         List<float> points = new List<float>();
@@ -77,9 +77,21 @@ public class Leaderboard : MonoBehaviour
     }
     public void TextChange()
     {
+        if(points.Count > 0)
+        {
         pointsText[0].text = points[0].ToString();
+
+        }
+        if (points.Count > 1)
+        {
         pointsText[1].text = points[1].ToString();
+
+        }
+        if (points.Count > 2)
+        {
         pointsText[2].text = points[2].ToString();
+
+        }
     }
     public void NameChange()
     {
