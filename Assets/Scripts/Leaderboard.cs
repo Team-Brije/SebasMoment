@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using TMPro;
 public class Leaderboard : MonoBehaviour
 {
-    public List<GameObject> playersList = new List<GameObject>();
+    //public List<GameObject> playersList = new List<GameObject>();
+
     public List<PointsSystem> leaderList = new List<PointsSystem>();
     public List<TextMeshProUGUI> pointsText;
-    public List<TextMeshProUGUI> NameText;
+    public List<TextMeshProUGUI> nameText;
 
     public List<float> points;
     
@@ -46,6 +47,7 @@ public class Leaderboard : MonoBehaviour
         {
             points[i] = leaderList[i].score; 
         }
+        TextChange();
     }
     public void SortLowestToHighestPlayers()
     {
@@ -67,9 +69,12 @@ public class Leaderboard : MonoBehaviour
     }
     public void TextChange()
     {
-        foreach(TextMeshProUGUI text in pointsText)
-        {
-          
-        }
+        pointsText[0].text = points[0].ToString();
+        pointsText[1].text = points[1].ToString();
+        pointsText[2].text = points[2].ToString();
+    }
+    public void NameChange()
+    {
+
     }
 }
