@@ -527,6 +527,7 @@ GameObject:
   - component: {fileID: 1764952999076242516}
   - component: {fileID: 5180711789969410934}
   - component: {fileID: 5666080174884678114}
+  - component: {fileID: 2351538792981146873}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -542,7 +543,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1765366821517896598}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.9070849, z: -0, w: 0.42094776}
+  m_LocalRotation: {x: 0, y: 0.90708447, z: 0, w: 0.4209488}
   m_LocalPosition: {x: -1160.6428, y: -668.08, z: 181.61186}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
@@ -664,6 +665,20 @@ CapsuleCollider:
   m_Height: 2.641422
   m_Direction: 1
   m_Center: {x: -0, y: 0.8207125, z: 0}
+--- !u!114 &2351538792981146873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765366821517896598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7c70345e0d5064b89c26fa1df52765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEnemy: 1
+  isProjectile: 0
 --- !u!1 &2144274452086475655
 GameObject:
   m_ObjectHideFlags: 0
