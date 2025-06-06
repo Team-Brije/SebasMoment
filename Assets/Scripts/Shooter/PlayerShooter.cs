@@ -48,7 +48,7 @@ public class PlayerShooter : MonoBehaviour
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             if (bulletRb != null)
             {
-                bulletRb.linearVelocity = shootPoint.forward * bulletSpeed;
+                bulletRb.linearVelocity = shootPoint.rotation * Vector3.forward * bulletSpeed;
             }
 
             if (bulletsFired >= 3)
