@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using Mirror;
 
-public class PlayerShooter : MonoBehaviour
+public class PlayerShooter : NetworkBehaviour
 {
     [Header("Shooting Settings")]
     public GameObject bulletPrefab;
@@ -10,16 +11,22 @@ public class PlayerShooter : MonoBehaviour
     private int bulletsFired = 0;
     private bool isShooting = false;
 
+    public GameObject cam;
+
     private StarterAssets.StarterAssetsInputs inputs;
+
+    public SpawnjObjectManager spawnjObjectManager;
 
     private void Awake()
     {
+        //if (!isLocalPlayer) { this.enabled = false; }
         inputs = GetComponent<StarterAssets.StarterAssetsInputs>();
+        spawnjObjectManager = GameObject.FindGameObjectWithTag("SpawnManager").GetComponent<SpawnjObjectManager>();
     }
 
     void Update()
     {
-        shootPoint.rotation = Camera.main.transform.rotation;
+        shootPoint.rotation = cam.transform.rotation;
 
         if (inputs.shoot && bulletsFired < 3 && !isShooting)
         {
@@ -37,22 +44,9 @@ public class PlayerShooter : MonoBehaviour
     {
         if (bulletPrefab != null && shootPoint != null)
         {
-            GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.rotation);
-            Destroy(bullet, 5f);
+            spawnjObjectManager.SpawnBullet(bulletPrefab,shootPoint);
+
             bulletsFired++;
-
-            ActorType actor = bullet.GetComponent<ActorType>();
-            if (actor != null)
-            {
-                actor.isProjectile = true;
-            }
-
-            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            if (bulletRb != null)
-            {
-                Vector3 shootDirection = shootPoint.forward;
-                bulletRb.linearVelocity = shootDirection * bulletSpeed;
-            }
 
             if (bulletsFired >= 3)
             {

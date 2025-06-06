@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mirror;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM 
 using UnityEngine.InputSystem;
 #endif
@@ -12,7 +13,7 @@ namespace StarterAssets
 #if ENABLE_INPUT_SYSTEM 
     [RequireComponent(typeof(PlayerInput))]
 #endif
-    public class ThirdPersonController : MonoBehaviour
+    public class ThirdPersonController : NetworkBehaviour
     {
         [Header("Player")]
         [Tooltip("Move speed of the character in m/s")]
@@ -112,6 +113,9 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+        public GameObject Cam;
+        public GameObject CamTarget;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -130,8 +134,20 @@ namespace StarterAssets
             // get a reference to our main camera
             if (_mainCamera == null)
             {
-                _mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+                _mainCamera = Cam;
             }
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+
+        public override void OnStartClient()
+        {
+            name = $"Player[{netId}]|{(isLocalPlayer ? "local" : "Remote")}]";
+        }
+
+        public override void OnStartServer()
+        {
+            name = $"Player[{netId}|server]";
         }
 
         private void Start()
@@ -146,6 +162,12 @@ namespace StarterAssets
 #else
             Debug.LogError("Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
+
+            if (isLocalPlayer)
+            {
+                Cam.SetActive(true);
+                CamTarget.SetActive(true);
+            }
 
             AssignAnimationIDs();
 

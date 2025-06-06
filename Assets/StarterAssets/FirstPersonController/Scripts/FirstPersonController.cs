@@ -97,6 +97,8 @@ namespace StarterAssets
 			{
 				_mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 			}
+			Cursor.lockState = CursorLockMode.Locked;
+			Cursor.visible = false;
 		}
 
         public override void OnStartClient()
