@@ -24,7 +24,7 @@ namespace BehaviorTrees
         int currentIndex;
         bool isPathCalculated;
 
-        public Moving(Transform transformEnemy, NavMeshAgent navnav, List<Transform> NewPositions, float patrolSpeed = 2f)
+        public Moving(Transform transformEnemy, NavMeshAgent navnav, List<Transform> NewPositions, float patrolSpeed = 20f)
         {
             this.transformEnemy = transformEnemy;
             this.navnav = navnav;
