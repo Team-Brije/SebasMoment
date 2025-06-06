@@ -9,7 +9,8 @@ public class SpawnBehaviour : MonoBehaviour
         foreach (GameObject point in SpawnPoints)
         {
             if (point.GetComponent<isAPlayerIn>().playerInSpace) continue;
-            //ponerelspawn, y asea tp o funcionxd
+            
+            player.transform.position = point.transform.position;
         }
     }
 }

@@ -15,14 +15,15 @@ public class DeathSystem : HealthSystem
     }
     IEnumerator Respawn()
     {
-        if(isDead)
+        if (isDead)
         {
             yield return new WaitForSeconds(5f);
-            isDead = false; 
+            isDead = false;
             health = maxHealth;
             shield = maxShield;
             canRegen = true;
             Debug.Log("Respawned");    
+            SpawnBehaviour.SpawnPlayer(gameObject);
         }
     }
     
