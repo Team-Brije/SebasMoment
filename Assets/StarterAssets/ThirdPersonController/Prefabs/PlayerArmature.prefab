@@ -671,6 +671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584b25812fe25564081bf0ca57ba9fa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
+  anims: {fileID: 0}
 --- !u!1 &3266411622757557566
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1105,8 @@ GameObject:
   - component: {fileID: 5885216827943657505}
   - component: {fileID: 135756642000475821}
   - component: {fileID: 4416926081852918493}
+  - component: {fileID: 4133078428831294320}
+  - component: {fileID: 7077668243627407234}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -1357,6 +1361,41 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4133078428831294320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584b25812fe25564081bf0ca57ba9fa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 15
+  anims: {fileID: 6982812146204527121}
+--- !u!65 &7077668243627407234
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416926081852918481}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.4558842, z: 0.56830215}
+  m_Center: {x: 0, y: 1.1085085, z: 1.4002408}
 --- !u!1 &4523139366846529165
 GameObject:
   m_ObjectHideFlags: 0
