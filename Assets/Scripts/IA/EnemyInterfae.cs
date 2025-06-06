@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using System;
 namespace BehaviorTrees
 {
     public interface EnemyInterfae
@@ -14,6 +15,18 @@ namespace BehaviorTrees
         {
 
         }
+    }
+
+    public class Condition : EnemyInterfae
+    {
+        readonly Func<bool> predicate;
+
+        public Condition(Func<bool> predicate)
+        {
+            this.predicate = predicate;
+        }
+
+        public Node.Status Process() => predicate() ? Node.Status.Success : Node.Status.Failure;
     }
     public class Moving : EnemyInterfae
     {
@@ -40,7 +53,7 @@ namespace BehaviorTrees
 
             if (isPathCalculated && navnav.remainingDistance < 0.1f)
             {
-                currentIndex++;
+                currentIndex = UnityEngine.Random.Range(0, NewPositions.Count);
                 isPathCalculated = false;
             }
 
@@ -54,5 +67,30 @@ namespace BehaviorTrees
         }
 
         public void Reset() => currentIndex = 0;
+    }
+    public class GetCloseToPlayer : EnemyInterfae
+    {
+        readonly Transform transformEnemy;
+        readonly NavMeshAgent navnav;
+        readonly Transform player;
+        readonly float patrolSpeed;
+
+        public GetCloseToPlayer(Transform transformEnemy, NavMeshAgent navnav, Transform player,float patrolSpeed = 20f)
+        {
+            this.transformEnemy = transformEnemy;
+            this.navnav = navnav;
+            this.player = player;
+            this.patrolSpeed = patrolSpeed;
+        }
+        public Node.Status Process()
+        {
+            if (navnav.remainingDistance < 0.2f) return Node.Status.Success;
+            
+            navnav.SetDestination(player.position);
+            
+
+            return Node.Status.Running;
+        }
+
     }
 }
