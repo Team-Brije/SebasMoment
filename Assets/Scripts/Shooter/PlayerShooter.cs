@@ -19,6 +19,8 @@ public class PlayerShooter : MonoBehaviour
 
     void Update()
     {
+        shootPoint.rotation = Camera.main.transform.rotation;
+
         if (inputs.shoot && bulletsFired < 3 && !isShooting)
         {
             StartCoroutine(ShootWithDelay());
@@ -48,7 +50,8 @@ public class PlayerShooter : MonoBehaviour
             Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
             if (bulletRb != null)
             {
-                bulletRb.linearVelocity = shootPoint.rotation * Vector3.forward * bulletSpeed;
+                Vector3 shootDirection = shootPoint.forward;
+                bulletRb.linearVelocity = shootDirection * bulletSpeed;
             }
 
             if (bulletsFired >= 3)
